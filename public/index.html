@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello - Creative Content Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Hello</h1>
+            <div id="nav-menu">
+                <a href="#feed">Public Feed</a>
+                <a href="#communities">Communities</a>
+                <a href="#challenges">Challenges</a>
+                <span id="user-info"></span>
+                <button id="logout-btn" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <!-- Auth Section -->
+        <div id="auth-section" class="section">
+            <div class="card">
+                <h2>Welcome to Hello</h2>
+                <p class="subtitle">A platform for creative collaboration and competition</p>
+                
+                <div class="auth-forms">
+                    <div class="form-container">
+                        <h3>Register</h3>
+                        <form id="register-form">
+                            <input type="text" id="reg-username" placeholder="Username" required>
+                            <input type="email" id="reg-email" placeholder="Email" required>
+                            <input type="password" id="reg-password" placeholder="Password" required>
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+                    
+                    <div class="form-container">
+                        <h3>Login</h3>
+                        <form id="login-form">
+                            <input type="email" id="login-email" placeholder="Email" required>
+                            <input type="password" id="login-password" placeholder="Password" required>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App Section -->
+        <div id="app-section" style="display: none;">
+            <!-- Public Feed -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Public Feed</h2>
+                    <button id="create-post-btn" class="btn-primary">Create Post</button>
+                </div>
+                <div id="feed-container"></div>
+            </div>
+
+            <!-- Communities -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Communities</h2>
+                    <button id="create-community-btn" class="btn-primary">Create Community</button>
+                </div>
+                <div id="communities-container"></div>
+            </div>
+
+            <!-- Challenges -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Challenges</h2>
+                    <div class="challenge-tabs">
+                        <button class="tab-btn active" data-type="all">All</button>
+                        <button class="tab-btn" data-type="compete">Compete</button>
+                        <button class="tab-btn" data-type="collab">Collab</button>
+                    </div>
+                    <button id="create-challenge-btn" class="btn-primary">Create Challenge</button>
+                </div>
+                <div id="challenges-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Post</h2>
+            <form id="post-form">
+                <input type="text" id="post-title" placeholder="Title" required>
+                <textarea id="post-content" placeholder="Content" rows="5" required></textarea>
+                <label>
+                    <input type="checkbox" id="post-public" checked> Public
+                </label>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="community-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Community</h2>
+            <form id="community-form">
+                <input type="text" id="community-name" placeholder="Name" required>
+                <textarea id="community-description" placeholder="Description" rows="3" required></textarea>
+                <label>
+                    <input type="checkbox" id="community-private" checked> Private
+                </label>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="challenge-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Challenge</h2>
+            <form id="challenge-form">
+                <input type="text" id="challenge-title" placeholder="Title" required>
+                <textarea id="challenge-description" placeholder="Description" rows="3" required></textarea>
+                <select id="challenge-type" required>
+                    <option value="">Select Type</option>
+                    <option value="compete">Compete</option>
+                    <option value="collab">Collaborate</option>
+                </select>
+                <input type="number" id="challenge-points" placeholder="Points" value="100" required>
+                <input type="datetime-local" id="challenge-start" required>
+                <input type="datetime-local" id="challenge-end" required>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
