@@ -261,12 +261,23 @@ npm test
 - **Routes**: Define API endpoints and map to controllers
 - **Middleware**: Handle cross-cutting concerns (auth, gamification)
 
+## Documentation
+
+- **[Quick Start Guide](./QUICK_START.md)** - Get started in minutes
+- **[API Documentation](./API.md)** - Complete API reference
+- **[Roadmap](./ROADMAP.md)** - Feature roadmap and status
+- **[Implementation Guide](./IMPLEMENTATION_GUIDE.md)** - Developer guide for extending the platform
+- **[Architecture](./ARCHITECTURE.md)** - System design and architecture
+- **[Contributing](./CONTRIBUTING.md)** - How to contribute
+
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ## License
 
