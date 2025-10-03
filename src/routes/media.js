@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const mediaController = require('../controllers/mediaController');
-const { authenticate } = require('../middleware/auth');
+const auth = require('../middleware/auth');
 
-router.post('/', authenticate, mediaController.createMedia);
-router.get('/', authenticate, mediaController.getMedia);
-router.get('/:id', authenticate, mediaController.getMediaById);
-router.put('/:id', authenticate, mediaController.updateMedia);
-router.delete('/:id', authenticate, mediaController.deleteMedia);
+router.post('/', auth, mediaController.createMedia);
+router.get('/', auth, mediaController.getMedia);
+router.get('/:id', auth, mediaController.getMediaById);
+router.put('/:id', auth, mediaController.updateMedia);
+router.delete('/:id', auth, mediaController.deleteMedia);
 
 module.exports = router;
